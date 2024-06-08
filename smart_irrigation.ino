@@ -11,7 +11,7 @@
 const int dry = xxxx; 
 const int wet = xxxx;
 
-char auth[] = "blynk";       // Blynk auth token
+char auth[] = "blynk-auth-token";       // Blynk auth token
 char ssid[] = "wifi"        // Wi-Fi SSID
 char pass[] = "******";        // Wi-Fi password
 
@@ -23,8 +23,8 @@ void setup() {
   pinMode(RELAY_PIN, OUTPUT);
   dht.begin();
 
-  Blynk.begin(auth, ssid, pass);
-  timer.setInterval(1500L, sendSensorData);
+  Blynk.begin(auth, ssid, pass); // Connect to the Blynk server with authentication
+  timer.setInterval(1500L, sendSensorData); // Set up a timer to send sensor data periodically
 
   // Connect to WiFi network
   WiFi.begin(ssid, pass);
@@ -35,8 +35,8 @@ void setup() {
 }
 
 void loop() {
-  Blynk.run();
-  timer.run();
+   Blynk.run(); // Run the Blynk library loop to process incoming commands and maintain the connection
+  timer.run(); // Run the BlynkTimer tasks
 }
 
 void sendSensorData() {
@@ -70,9 +70,10 @@ void sendSensorData() {
 
   if (Blynk.connected()) {
     // Send sensor data to Blynk app
-    Blynk.virtualWrite(V3, percentageHumidity);
-    Blynk.virtualWrite(V0, temp);
-    Blynk.virtualWrite(V1, hum);
+    Blynk.virtualWrite(V3, percentageHumidity); // Send soil moisture level to virtual pin V3
+    Blynk.virtualWrite(V0, temp);               // Send temperature to virtual pin V0
+    Blynk.virtualWrite(V1, hum);                // Send humidity to virtual pin V1
+
 
     if (temp > 45) {
       Blynk.logEvent("temperature", "warning: High temperature detected! Please take appropriate measures to protect your crops.");
