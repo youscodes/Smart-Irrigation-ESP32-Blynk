@@ -44,10 +44,8 @@ This project implements a smart irrigation system using ESP32 microcontroller, B
 - Receive alerts and notifications when thresholds are exceeded.
 
 ## Circuit Diagram
-![Circuit Diagram](link-to-your-circuit-diagram-image)
+Circuit Diagram.png
 
-## Contributors
-- [Your Name](link-to-your-github-profile) - Project Lead
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
