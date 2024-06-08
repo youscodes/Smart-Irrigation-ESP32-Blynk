@@ -46,5 +46,8 @@ This project implements a smart irrigation system using ESP32 microcontroller, B
 ## Circuit Diagram
 [Circuit Diagram.png] (https://github.com/youscodes/Smart-Irrigation-ESP32-Blynk/blob/72fd567fa7fe5aca5c4e1d89fcb18d9eb60958f5/Circuit%20Diagram.png)
 
+## Code
+https://github.com/youscodes/Smart-Irrigation-ESP32-Blynk/blob/df79ac143d5f87bfdb94b8180cc4a3d3402e89bd/smart_irrigation.ino
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
